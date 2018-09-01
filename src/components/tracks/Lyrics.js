@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
-import Moment from 'moment';
+import Moment from 'react-moment';
 
 class Lyrics extends Component {
-  constructor() {
-    super();
-    this.state = {
-      track: {},
-      lyrics: {}
-    };
-  }
+  state = {
+    track: {},
+    lyrics: {}
+  };
 
   componentDidMount() {
     axios
@@ -44,7 +41,7 @@ class Lyrics extends Component {
       Object.keys(track).length === 0 ||
       Object.keys(lyrics).length === 0
     ) {
-      return <Spinner />
+      return <Spinner />;
     } else {
       return (
         <React.Fragment>
@@ -85,6 +82,6 @@ class Lyrics extends Component {
       );
     }
   }
-};
+}
 
 export default Lyrics;

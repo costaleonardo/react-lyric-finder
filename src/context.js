@@ -17,14 +17,11 @@ const reducer = (state, action) => {
 };
 
 export class Provider extends Component {
-  constructor() {
-    super();
-    this.state= {
-      track_list: [],
-      heading: 'Top 10 Tracks',
-      dispatch: action => this.setState(state => reducer(state, action))
-    };
-  }
+  state = {
+    track_list: [],
+    heading: 'Top 10 Tracks',
+    dispatch: action => this.setState(state => reducer(state, action))
+  };
 
   componentDidMount() {
     axios
@@ -47,6 +44,6 @@ export class Provider extends Component {
       </Context.Provider>
     );
   }
-};
+}
 
 export const Consumer = Context.Consumer;
