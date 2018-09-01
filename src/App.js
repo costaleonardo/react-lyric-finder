@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Broweser as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from './context';
+
+import Nav from './components/layout/Nav';
+// import Index from './components/layout/Index';
+// import Lyrics from './components/tracks/Lyrics';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider>
+        <Router>
+          <React.Fragment>
+            <Nav />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Index} />
+                <Route exact path="/lyrics/track/:id" component={Lyrics}/>
+              </Switch>
+            </div>          
+          </React.Fragment>
+        </Router>
+      </Provider>
     );
   }
 }
