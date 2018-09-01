@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
-import Moment from 'react-moment';
+import Moment from 'moment';
 
 class Lyrics extends Component {
   constructor() {
