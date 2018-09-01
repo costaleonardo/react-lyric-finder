@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Broweser as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from './context';
 
 import Nav from './components/layout/Nav';
-// import Index from './components/layout/Index';
-// import Lyrics from './components/tracks/Lyrics';
+import Index from './components/layout/Index';
+import Lyrics from './components/tracks/Lyrics';
 
 import './App.css';
 
